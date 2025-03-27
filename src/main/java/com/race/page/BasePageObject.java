@@ -23,22 +23,27 @@ public class BasePageObject extends BaseClass{
 	protected WebElement find(By locator) {
 		return driver.findElement(locator);
 	}
+
 	protected boolean isElementPresent(By by) {
-	        try {
-	            WebElement element = find(by);
-	            return element.isDisplayed(); 
-	        } catch (NoSuchElementException e) {
-	            return false;  
-	        }
-	    }
-//	protected void clickOnElement(By locator) {
-//				  try {
-//					  find(locator).click();
-//					  System.out.println("Successfully clicked Element ");
-//	        } catch (NoSuchElementException e) {
-//	            System.out.println("Unable to find Clickable Element ");
-//	        }
-//	    }
+		try {
+			WebElement element = find(by);
+			System.out.println("Element is not present in dom");
+			return element.isDisplayed();
+
+		} catch (NoSuchElementException e) {
+			System.out.println("Element is not present in dom");
+			return false;
+		}
+	}
+
+	protected void clickOnElement(By locator) {
+		try {
+			find(locator).click();
+			System.out.println("Successfully clicked Element ");
+		} catch (NoSuchElementException e) {
+			System.out.println("Unable to find Clickable Element ");
+		}
+	}
 	
 
 
