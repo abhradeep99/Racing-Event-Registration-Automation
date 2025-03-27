@@ -1,61 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-25T17:56:43 IST" name="Default suite" finished-at="2025-03-25T17:57:10 IST" duration-ms="27123">
+  <suite started-at="2025-03-27T10:21:17 IST" name="Suite" finished-at="2025-03-27T10:21:52 IST" duration-ms="35542">
     <groups>
     </groups>
-    <test started-at="2025-03-25T17:56:43 IST" name="Default test" finished-at="2025-03-25T17:57:10 IST" duration-ms="27123">
-      <class name="ui.test.HomePageTest">
-        <test-method is-config="true" signature="setUp(java.lang.String,org.testng.ITestContext)[pri:0, instance:ui.test.HomePageTest@411f53a0]" started-at="2025-03-25T17:56:43 IST" name="setUp" finished-at="2025-03-25T17:56:44 IST" duration-ms="1517" status="PASS">
+    <test started-at="2025-03-27T10:21:17 IST" name="Test" finished-at="2025-03-27T10:21:52 IST" duration-ms="35542">
+      <class name="ui.test.LoginTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,org.testng.ITestContext)[pri:0, instance:ui.test.LoginTest@31190526]" started-at="2025-03-27T10:21:49 IST" name="setUp" finished-at="2025-03-27T10:21:52 IST" duration-ms="2371" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@2d66530f]]>
+                <![CDATA[org.testng.TestRunner@7b44b63d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyHomePage()[pri:0, instance:ui.test.HomePageTest@411f53a0]" started-at="2025-03-25T17:56:44 IST" name="verifyHomePage" finished-at="2025-03-25T17:56:57 IST" duration-ms="12437" status="PASS">
+        <test-method signature="verifyLoginSignUpButton()[pri:0, instance:ui.test.LoginTest@31190526]" started-at="2025-03-27T10:21:52 IST" name="verifyLoginSignUpButton" finished-at="2025-03-27T10:21:52 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyHomePage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.test.HomePageTest@411f53a0]" started-at="2025-03-25T17:56:57 IST" name="tearDown" finished-at="2025-03-25T17:56:57 IST" duration-ms="193" status="PASS">
+        </test-method> <!-- verifyLoginSignUpButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.test.LoginTest@31190526]" started-at="2025-03-27T10:21:52 IST" name="tearDown" finished-at="2025-03-27T10:21:52 IST" duration-ms="777" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(java.lang.String,org.testng.ITestContext)[pri:0, instance:ui.test.HomePageTest@411f53a0]" started-at="2025-03-25T17:56:57 IST" name="setUp" finished-at="2025-03-25T17:56:58 IST" duration-ms="692" status="PASS">
+      </class> <!-- ui.test.LoginTest -->
+      <class name="ui.test.HomePageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,org.testng.ITestContext)[pri:0, instance:ui.test.HomePageTest@5bf0d49]" started-at="2025-03-27T10:21:17 IST" name="setUp" finished-at="2025-03-27T10:21:20 IST" duration-ms="3044" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@2d66530f]]>
+                <![CDATA[org.testng.TestRunner@7b44b63d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyHomePageUrl()[pri:0, instance:ui.test.HomePageTest@411f53a0]" started-at="2025-03-25T17:56:58 IST" name="verifyHomePageUrl" finished-at="2025-03-25T17:57:10 IST" duration-ms="12068" status="PASS">
+        <test-method signature="verifyHomePage()[pri:0, instance:ui.test.HomePageTest@5bf0d49]" started-at="2025-03-27T10:21:20 IST" name="verifyHomePage" finished-at="2025-03-27T10:21:35 IST" duration-ms="14711" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.test.HomePageTest@5bf0d49]" started-at="2025-03-27T10:21:35 IST" name="tearDown" finished-at="2025-03-27T10:21:35 IST" duration-ms="714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,org.testng.ITestContext)[pri:0, instance:ui.test.HomePageTest@5bf0d49]" started-at="2025-03-27T10:21:35 IST" name="setUp" finished-at="2025-03-27T10:21:38 IST" duration-ms="2399" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@7b44b63d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyHomePageUrl()[pri:0, instance:ui.test.HomePageTest@5bf0d49]" started-at="2025-03-27T10:21:38 IST" name="verifyHomePageUrl" finished-at="2025-03-27T10:21:48 IST" duration-ms="10661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageUrl -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.test.HomePageTest@411f53a0]" started-at="2025-03-25T17:57:10 IST" name="tearDown" finished-at="2025-03-25T17:57:10 IST" duration-ms="165" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.test.HomePageTest@5bf0d49]" started-at="2025-03-27T10:21:48 IST" name="tearDown" finished-at="2025-03-27T10:21:49 IST" duration-ms="830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ui.test.HomePageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -22,6 +22,7 @@ public class HomePage extends BasePageObject {
 			openUrl(pageUrl);
 			Assert.assertEquals(driver.getCurrentUrl(), pageUrl);
 			log.info("Page opened "+ pageUrl);
+		
 		}
 		public void VerifyHomePage() {  
 			//find(logo);

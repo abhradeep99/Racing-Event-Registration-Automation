@@ -25,7 +25,7 @@ public class BasePageObject extends BaseClass{
 	}
 	protected boolean isElementPresent(By by) {
 	        try {
-	            WebElement element = driver.findElement(by);
+	            WebElement element = find(by);
 	            return element.isDisplayed(); 
 	        } catch (NoSuchElementException e) {
 	            return false;  

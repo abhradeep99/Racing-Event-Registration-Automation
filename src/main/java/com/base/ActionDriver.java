@@ -17,7 +17,7 @@ public class ActionDriver {
 			this.browser = browser.toLowerCase();
 			this.log = log;
 		}
-		@Parameters({ "browser" })
+
 		public WebDriver createDriver() {
 			// Create driver
 			log.info("Create driver: " + browser);
