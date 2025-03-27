@@ -8,4 +8,11 @@
        <class name="ui.test.LoginTest"/>
     </classes>
   </test> <!-- Test -->
+   <test thread-count="5" name="TestCrome">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="ui.test.HomePageTest"/>
+       <class name="ui.test.LoginTest"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
