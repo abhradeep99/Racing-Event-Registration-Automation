@@ -4,9 +4,18 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
+      <class name="ui.test.HomePageTest">
+        <methods>
+          <include name="verifyHomePage"/>
+          <include name="tearDown"/>
+          <include name="verifyHomePageUrl"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- ui.test.HomePageTest -->
       <class name="ui.test.LoginTest">
         <methods>
           <include name="ClickOnSignUpButton"/>
+          <include name="verifyLoginSignUpButton"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

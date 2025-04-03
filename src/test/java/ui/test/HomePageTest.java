@@ -18,12 +18,14 @@ public class HomePageTest extends Utilities{
 	public void verifyHomePageUrl() {
 		HomePage homePage=new HomePage( driver,  log);
 		homePage.openPageUrl();
+		sleeps(5000);
 	}
 	@Test
 	public void verifyHomePage() {
 	//	initializePageOpjects();
 		HomePage homePage=new HomePage( driver,  log);
 		homePage.openPageUrl();
+		sleeps(5000);
 		homePage.VerifyHomePage();
 	}
 	

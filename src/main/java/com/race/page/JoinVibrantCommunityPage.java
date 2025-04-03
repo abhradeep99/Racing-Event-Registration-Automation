@@ -14,10 +14,10 @@ public class JoinVibrantCommunityPage extends BasePageObject{
 		private By MOBILENUMBERINPUTFIELD = By.xpath("//input[@placeholder=\"Mobile number\"]");
 
 		public void verifyJoinVibrantCommunityPage() {
-			isElementPresent(VIBRANTCOMMUNITYPAGE);
+			waitForVisibilityOf(VIBRANTCOMMUNITYPAGE, 10);
 			Assert.assertTrue(isElementPresent(VIBRANTCOMMUNITYPAGE), "Join a vibrant\r\n"
 					+ "Community! ");
-			isElementPresent(MOBILENUMBERINPUTFIELD); 
+			waitForVisibilityOf(MOBILENUMBERINPUTFIELD, 10);
 			Assert.assertTrue(isElementPresent(MOBILENUMBERINPUTFIELD), "Mobile Number Input Field Is Present");
 		}
 

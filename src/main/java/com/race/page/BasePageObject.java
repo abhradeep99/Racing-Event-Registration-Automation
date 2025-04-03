@@ -1,14 +1,20 @@
 package com.race.page;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.base.BaseClass;
 
-public class BasePageObject extends BaseClass{
+public class BasePageObject extends BaseClass {
 	protected WebDriver driver;
 	protected Logger log;
 
@@ -16,24 +22,35 @@ public class BasePageObject extends BaseClass{
 		this.driver = driver;
 		this.log = log;
 	}
-	
+
 	protected void openUrl(String url) {
 		driver.get(url);
 	}
+
 	protected WebElement find(By locator) {
-		return driver.findElement(locator);
+		try {
+			WebElement element = driver.findElement(locator);
+			System.out.println("Element found: " + locator.toString());
+			return element;
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found in DOM: " + locator.toString());
+			throw e;
+		}
 	}
 
-	protected boolean isElementPresent(By by) {
+	protected boolean isElementPresent(By locator) {
 		try {
-			WebElement element = find(by);
-			System.out.println("Element is not present in dom");
+			WebElement element = find(locator);
 			return element.isDisplayed();
-
 		} catch (NoSuchElementException e) {
-			System.out.println("Element is not present in dom");
+			System.out.println("Element is NOT present in DOM: " + locator.toString());
 			return false;
 		}
+	}
+
+	protected void enterText(String text, By locator,Integer sec) {
+		waitForVisibilityOf(locator,  sec);
+		find(locator).sendKeys(text);
 	}
 
 	protected void clickOnElement(By locator) {
@@ -44,7 +61,24 @@ public class BasePageObject extends BaseClass{
 			System.out.println("Unable to find Clickable Element ");
 		}
 	}
-	
 
+	private void waitFor(ExpectedCondition<WebElement> condition, Integer timeOutInSeconds) {
+		timeOutInSeconds = timeOutInSeconds != null ? timeOutInSeconds : 30;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds));
+		wait.until(condition);
+	}
+
+	protected void waitForVisibilityOf(By locator, Integer... timeOutInSeconds) {
+		int attempts = 0;
+		while (attempts < 2) {
+			try {
+				waitFor(ExpectedConditions.visibilityOfElementLocated(locator),
+						(timeOutInSeconds.length > 0 ? timeOutInSeconds[0] : null));
+				break;
+			} catch (StaleElementReferenceException e) {
+			}
+			attempts++;
+		}
+	}
 
 }

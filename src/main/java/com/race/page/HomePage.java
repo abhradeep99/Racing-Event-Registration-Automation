@@ -20,12 +20,14 @@ public class HomePage extends BasePageObject {
 		public void openPageUrl() {
 			log.info("Opening page : " + pageUrl);
 			openUrl(pageUrl);
+			waitForVisibilityOf(logo);
 			Assert.assertEquals(driver.getCurrentUrl(), pageUrl);
 			log.info("Page opened "+ pageUrl);
 		
 		}
 		public void VerifyHomePage() {  
-			//find(logo);
+			waitForVisibilityOf(logo);
+		    isElementPresent(logo);
 			log.info("Page opened "+ isElementPresent(logo));
 		}
 
