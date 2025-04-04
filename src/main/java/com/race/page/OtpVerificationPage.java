@@ -13,9 +13,9 @@ public class OtpVerificationPage extends BasePageObject {
 			super(driver, log);
 		}	  
 
-		private By OTP_BUTTON = By.xpath("//span[text()='Get OTP']");
-		private By OTP_PAGE = By.xpath("//*[contains(text(), concat(\"Let\", \"'\", \"s Verify\"))]");
-		private By OTP_VERIFY_BUTTON = By.xpath("//span[text()='Verify']");
+		private By OTP_BUTTON = By.xpath("//span[text()='Get OTP'] |//*[text()=\"Please enter your email address\"]/following-sibling::button");
+		private By OTP_PAGE = By.xpath("//*[contains(text(), concat(\"Let\", \"'\", \"s Verify\"))] | //*[contains(text(), \"OTP has been sent \")]");
+		private By OTP_VERIFY_BUTTON = By.xpath("//span[text()='Verify']|//button[text()=\"Verify OTP\"]");
 
 		public  void verifyOTP() {  
 			waitForVisibilityOf(OTP_BUTTON);

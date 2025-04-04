@@ -10,7 +10,7 @@ public class LoginPage extends BasePageObject {
 	private By LOGIN = By.xpath("//span[text()='Log In']");
 	private By SIGNIN = By.xpath("//span[text()='Sign Up']");
 	private By MOBILENUMBERINPUTFIELD = By.xpath("//input[@placeholder=\"Mobile number\"]");
-	private By EMAILINPUTFIELD = By.xpath("input[@id='email']");
+	private By EMAILINPUTFIELD = By.xpath("//input[@id='email']");
 	private By LOGOUT = By.xpath("//*[text()='Logout']");
 
 	public LoginPage(WebDriver driver, Logger log) {
@@ -38,6 +38,7 @@ public class LoginPage extends BasePageObject {
 	public void login(String userid) {
 		log.info("Executing Negative LogIn with username " + userid);
 		if (isValidEmail(userid)) {
+			clickOnElement(EMAILINPUTFIELD);
 			enterText(userid, EMAILINPUTFIELD, 5);
 		} else if (isValidMobile(userid)) {
 			enterText(userid, MOBILENUMBERINPUTFIELD, 5);
